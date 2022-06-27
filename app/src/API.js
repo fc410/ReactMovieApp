@@ -1,6 +1,7 @@
 import {
   SEARCH_BASE_URL,
   POPULAR_BASE_URL,
+  SEARCH_MULTI_BASE_URL,
   API_URL,
   API_KEY,
   REQUEST_TOKEN_URL,
@@ -22,6 +23,12 @@ const apiSettings = {
       : `${POPULAR_BASE_URL}&page=${page}`;
     return await (await fetch(endpoint)).json();
   },
+  fetchMulti: async (searchTerm, page) => {
+    const endpoint = searchTerm
+      ? `${SEARCH_MULTI_BASE_URL}${searchTerm}&page=${page}`
+      : `${POPULAR_BASE_URL}&page=${page}`;
+    return await (await fetch(endpoint)).json();
+  },
   fetchMovie: async movieId => {
     const endpoint = `${API_URL}movie/${movieId}?api_key=${API_KEY}`;
     return await (await fetch(endpoint)).json();
@@ -30,7 +37,7 @@ const apiSettings = {
     const creditsEndpoint = `${API_URL}movie/${movieId}/credits?api_key=${API_KEY}`;
     return await (await fetch(creditsEndpoint)).json();
   },
-  fetchPeople: async personId => {
+  fetchPeople: async (personId) => {
     const endpoint = `${API_URL}person/${personId}?api_key=${API_KEY}`;
     return await (await fetch(endpoint)).json();
   },

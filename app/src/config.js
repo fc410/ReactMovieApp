@@ -5,6 +5,7 @@ const API_URL = 'https://api.themoviedb.org/3/';
 const API_KEY = process.env.REACT_APP_API_KEY;
 
 const SEARCH_BASE_URL = `${API_URL}search/movie?api_key=${API_KEY}&language=en-US&query=`;
+const SEARCH_MULTI_BASE_URL = `${API_URL}search/multi?api_key=${API_KEY}&language=en-US&query=`;
 const POPULAR_BASE_URL = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US`;
 const PEOPLE_BASE_URL = `${API_URL}people/people?api_key=${API_KEY}&language=en-US`;
 // For login and voting
@@ -21,6 +22,7 @@ const POSTER_SIZE = 'w780';
 export {
   SEARCH_BASE_URL,
   POPULAR_BASE_URL,
+  SEARCH_MULTI_BASE_URL,
   PEOPLE_BASE_URL,
   API_URL,
   API_KEY,

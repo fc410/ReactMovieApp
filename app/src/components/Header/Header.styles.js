@@ -14,19 +14,18 @@ export const Content = styled.div`
     margin: 0 auto;
 `;
 
-// When the screen is less than 500px
 export const LogoImg = styled.img`
     width: 200px;
 
-    @media screen and (max-width: 500px){
-        width 150px;
+    @media screen and (max-width: 500px) {
+        width: 150px;
     }
 `;
 
 export const TMBDLogoImg = styled.img`
     width: 100px;
 
-    @media screen and (max-width: 500px){
-        width: 80px;
+    @media screen and (max-width: 500px) {
+        width:80px;
     }
 `;
