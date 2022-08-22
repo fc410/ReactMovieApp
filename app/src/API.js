@@ -1,5 +1,6 @@
 import {
   SEARCH_BASE_URL,
+  SEARCH_BASE_PERSON_URL,
   POPULAR_BASE_URL,
   SEARCH_MULTI_BASE_URL,
   API_URL,
@@ -39,6 +40,11 @@ const apiSettings = {
   },
   fetchPeople: async (personId) => {
     const endpoint = `${API_URL}person/${personId}?api_key=${API_KEY}`;
+    return await (await fetch(endpoint)).json();
+  },
+  fetchPerson: async (searchTerm) => {
+    const endpoint = `${SEARCH_BASE_PERSON_URL}${searchTerm}&page=1`;
+    console.log(endpoint);
     return await (await fetch(endpoint)).json();
   },
   // material below for login
